@@ -1,0 +1,19 @@
+{
+  "scene_id": "emrdm_demo_change_001",
+  "description": "Demo change detection scene (precomputed assets pending)",
+  "model": "abs_diff_otsu_v1",
+  "model_version": "1.0",
+  "repository_url": null,
+  "repository_commit": null,
+  "checkpoint": null,
+  "checkpoint_sha256": null,
+  "input_filename": null,
+  "input_sha256": null,
+  "output_filename": null,
+  "output_sha256": null,
+  "device": "CPU",
+  "execution_timestamp": null,
+  "runtime_seconds": null,
+  "precomputed": false,
+  "notes": "Placeholder. CPU algorithm abs_diff_otsu_v1 runs live on real images."
+}

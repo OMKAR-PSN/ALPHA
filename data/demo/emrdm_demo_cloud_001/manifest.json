@@ -1,0 +1,19 @@
+{
+  "scene_id": "emrdm_demo_cloud_001",
+  "description": "Demo cloud scene for EMRDM reconstruction (GPU output pending)",
+  "model": "EMRDM",
+  "model_version": null,
+  "repository_url": "https://github.com/Ly403/EMRDM",
+  "repository_commit": null,
+  "checkpoint": null,
+  "checkpoint_sha256": null,
+  "input_filename": "cloudy_input.png",
+  "input_sha256": null,
+  "output_filename": "reconstruction_output.png",
+  "output_sha256": null,
+  "device": null,
+  "execution_timestamp": null,
+  "runtime_seconds": null,
+  "precomputed": false,
+  "notes": "Placeholder manifest. GPU run not yet performed. Set precomputed=true and populate sha256 fields after running scripts/run_emrdm_offline.py on a GPU machine."
+}

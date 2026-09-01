@@ -1,0 +1,8 @@
+{
+  "scene_id": "real_crossmodal_001",
+  "scenario_type": "sar_optical",
+  "sensor_optical": "Sentinel-2",
+  "sensor_sar": "Sentinel-1",
+  "status": "CROSS_MODAL_ANALYSIS_UNAVAILABLE",
+  "notes": "Proper aligned SAR+Optical pair requires Rasterio/GDAL for reprojection. Left blank to demonstrate honest capability reporting."
+}

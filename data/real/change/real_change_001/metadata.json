@@ -1,0 +1,13 @@
+{
+  "scene_id": "real_change_001",
+  "scenario_type": "bi_temporal_change",
+  "sensor_t1": "Sentinel-2",
+  "sensor_t2": "Sentinel-2",
+  "source": "Planetary Computer",
+  "acquisition_date_t1": "2022-04-21",
+  "acquisition_date_t2": "2022-07-15",
+  "aoi_name": "Assam, India (Flood)",
+  "image_t1": "data/real/change/real_change_001/t1.png",
+  "image_t2": "data/real/change/real_change_001/t2.png",
+  "input_provenance": "REAL_SATELLITE_DATA"
+}

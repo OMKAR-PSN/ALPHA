@@ -1,0 +1,49 @@
+{
+  "version": "1.1",
+  "description": "Provenance registry for all demo scenes in SatQuery AI",
+  "scenes": {
+    "demo1": {
+      "title": "Bi-Temporal Urban Expansion",
+      "input_provenance": "REAL_SATELLITE_DATA",
+      "algorithm_provenance": "LIVE_ALGORITHM",
+      "sensors": [
+        "Sentinel-2 (Optical)"
+      ],
+      "real_data_pending": false,
+      "real_data_source": "Copernicus Data Space via Planetary Computer",
+      "image_t1_path": "data/real/change/real_change_001/t1.png",
+      "image_t2_path": "data/real/change/real_change_001/t2.png",
+      "acquisition_date_t1": "2022-04-21",
+      "acquisition_date_t2": "2022-07-15",
+      "aoi_name": "Assam, India (Flood)",
+      "metadata_path": "data/real/change/real_change_001/metadata.json"
+    },
+    "demo2": {
+      "title": "SAR-Optical Fusion",
+      "input_provenance": "SYNTHETIC_DATA",
+      "algorithm_provenance": "SAR_NOT_AVAILABLE",
+      "sensors": [
+        "Sentinel-2 (optical, demo)",
+        "Sentinel-1 (SAR — not available)"
+      ],
+      "real_data_pending": true,
+      "real_data_source": "CROSS_MODAL_ANALYSIS_UNAVAILABLE",
+      "notes": "Proper aligned SAR+Optical pair requires Rasterio/GDAL for reprojection. Used synthetic fallback.",
+      "metadata_path": "data/real/sar_optical/real_crossmodal_001/metadata.json"
+    },
+    "demo3": {
+      "title": "Cloud Contamination + Auto Reconstruction",
+      "input_provenance": "REAL_SATELLITE_DATA",
+      "algorithm_provenance": "LIVE_ALGORITHM (rgb_cloud_detector_v1 + opencv_telea_inpaint)",
+      "sensors": [
+        "Sentinel-2 (Optical)"
+      ],
+      "real_data_pending": false,
+      "real_data_source": "Copernicus Data Space via Planetary Computer",
+      "image_path": "data/real/cloud/real_cloud_001/input.png",
+      "acquisition_date": "2022-07-15",
+      "aoi_name": "Assam, India",
+      "metadata_path": "data/real/cloud/real_cloud_001/metadata.json"
+    }
+  }
+}

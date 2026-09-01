@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design System Base ─────────────────────────────────────────────────── */
+
+:root {
+  --navy: #0F2A4A;
+  --teal: #1A6B6B;
+  --orange: #E07B39;
+  --green: #2E7D52;
+  --bg: #F5F7FA;
+  --panel: #FFFFFF;
+  --border: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbars ─────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ── Components ─────────────────────────────────────────────────────────── */
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-rs-navy text-white font-semibold text-sm rounded-lg
+           hover:bg-navy-800 active:bg-navy-950 transition-all duration-150 shadow-navy
+           focus:outline-none focus:ring-2 focus:ring-rs-navy focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-rs-teal text-white font-semibold text-sm rounded-lg
+           hover:bg-teal-600 active:bg-teal-800 transition-all duration-150
+           focus:outline-none focus:ring-2 focus:ring-rs-teal focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-rs-text-secondary font-medium text-sm rounded-lg
+           border border-rs-border hover:bg-gray-50 hover:border-gray-300 transition-all duration-150;
+  }
+
+  .btn-orange {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-rs-orange text-white font-semibold text-sm rounded-lg
+           hover:bg-orange-600 transition-all duration-150 shadow-md;
+  }
+
+  .panel {
+    @apply bg-white rounded-xl border border-rs-border shadow-panel;
+  }
+
+  .panel-header {
+    @apply flex items-center justify-between px-4 py-3 border-b border-rs-border;
+  }
+
+  .panel-title {
+    @apply text-sm font-semibold text-rs-text-primary uppercase tracking-wide;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-navy {
+    @apply badge bg-navy-100 text-navy-800;
+  }
+
+  .badge-teal {
+    @apply badge bg-teal-100 text-teal-800;
+  }
+
+  .badge-green {
+    @apply badge bg-green-100 text-green-800;
+  }
+
+  .badge-orange {
+    @apply badge bg-orange-100 text-orange-800;
+  }
+
+  .badge-red {
+    @apply badge bg-red-100 text-red-800;
+  }
+
+  .badge-gray {
+    @apply badge bg-gray-100 text-gray-600;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 text-sm border border-rs-border rounded-lg bg-white
+           focus:outline-none focus:ring-2 focus:ring-rs-navy focus:border-transparent
+           placeholder:text-rs-text-muted transition-colors;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-widest text-rs-text-muted;
+  }
+
+  .confidence-bar {
+    @apply h-1.5 rounded-full bg-gray-200 overflow-hidden;
+  }
+
+  .confidence-bar-fill {
+    @apply h-full rounded-full transition-all duration-700;
+  }
+
+  .tool-step {
+    @apply flex items-start gap-3 py-2.5 border-b border-gray-50 last:border-0 animate-trace-appear;
+  }
+
+  .step-icon {
+    @apply w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5;
+  }
+
+  .step-icon-pending {
+    @apply step-icon bg-gray-200;
+  }
+
+  .step-icon-running {
+    @apply step-icon bg-blue-100 text-blue-600;
+  }
+
+  .step-icon-done {
+    @apply step-icon bg-green-100 text-green-700;
+  }
+
+  .step-icon-warning {
+    @apply step-icon bg-orange-100 text-orange-600;
+  }
+
+  .step-icon-error {
+    @apply step-icon bg-red-100 text-red-600;
+  }
+}
+
+/* ── Animations ─────────────────────────────────────────────────────────── */
+
+.animate-trace-appear {
+  animation: traceAppear 0.4s ease-out forwards;
+}
+
+@keyframes traceAppear {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.running-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3b82f6;
+  animation: runningDot 1.2s ease-in-out infinite;
+}
+
+@keyframes runningDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.6); }
+}
+
+/* SSE Progress shimmer */
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Before/After Slider ──────────────────────────────────────────────────── */
+
+.image-compare-container {
+  position: relative;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+}
+
+.image-compare-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.image-compare-handle::before,
+.image-compare-handle::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
+/* ── Map container ────────────────────────────────────────────────────────── */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+}
+
+/* ── Overlay tooltip ──────────────────────────────────────────────────────── */
+.tooltip-demo {
+  @apply absolute top-2 left-2 px-2 py-1 rounded text-xs font-bold bg-red-600 text-white uppercase tracking-wide;
+}
+
+/* ── Navigation ─────────────────────────────────────────────────────────── */
+.nav-link {
+  @apply text-sm font-medium text-gray-600 hover:text-rs-navy transition-colors px-3 py-2 rounded-lg hover:bg-gray-50;
+}
+
+.nav-link-active {
+  @apply text-rs-navy bg-navy-50 font-semibold;
+}

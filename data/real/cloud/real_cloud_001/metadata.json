@@ -1,0 +1,19 @@
+{
+  "scene_id": "real_cloud_001",
+  "scenario_type": "cloud_analysis",
+  "sensor": "Sentinel-2",
+  "platform": "Sentinel-2A",
+  "product_type": "optical",
+  "source": "Copernicus Data Space via Planetary Computer",
+  "source_item_id": "S2A_MSIL2A_20220715T042721_R133_T46RCQ_20220715T175944",
+  "acquisition_date": "2022-07-15",
+  "aoi_name": "Assam, India",
+  "bands_used": [
+    "R",
+    "G",
+    "B"
+  ],
+  "input_provenance": "REAL_SATELLITE_DATA",
+  "image_path": "data/real/cloud/real_cloud_001/input.png",
+  "notes": "Real cropped optical scene used for cloud demo."
+}
